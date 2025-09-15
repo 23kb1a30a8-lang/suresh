@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Button Click Event Handling</title>
+</head>
+<body>
+  <button id="btn1">Button 1</button>
+  <button id="btn2">Button 2</button>
+  <button class="btn-class">Button 3</button>
+  <button class="btn-class">Button 4</button>
+
+  <p id="message"></p>
+
+  <script>
+    // Select a button by ID and handle click
+    const button1 = document.getElementById('btn1');
+    button1.addEventListener('click', () => {
+      document.getElementById('message').textContent = 'Button 1 was clicked!';
+    });
+
+    // Select another button by ID and handle click
+    const button2 = document.getElementById('btn2');
+    button2.addEventListener('click', () => {
+      document.getElementById('message').textContent = 'Button 2 was clicked!';
+    });
+
+    // Select multiple buttons by class and add click event listener
+    const buttons = document.querySelectorAll('.btn-class');
+    buttons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        document.getElementById('message').textContent = `Button ${index + 3} (class) was clicked!`;
+      });
+    });
+  </script>
+</body>
+</html>
